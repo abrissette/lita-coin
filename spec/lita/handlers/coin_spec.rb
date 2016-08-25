@@ -1,10 +1,10 @@
 require "spec_helper"
 
 describe Lita::Handlers::Coin, lita_handler: true do
-  it { routes_command("flip a coin").to(:flip) }
-  it { routes_command("toss a coin").to(:flip) }
-  it { routes_command("coin flip").to(:flip) }
-  it { routes_command("coin toss").to(:flip) }
+  it { is_expected.to route_command("flip a coin").to(:flip) }
+  it { is_expected.to route_command("toss a coin").to(:flip) }
+  it { is_expected.to route_command("coin flip").to(:flip) }
+  it { is_expected.to route_command("coin toss").to(:flip) }
 
   describe "#flip" do
     it "responds with the results of the flip" do
